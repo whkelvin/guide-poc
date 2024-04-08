@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      const c1Name = "癸二、教授中出.mp3";
+      const c2Name = "A1、正說.mp3";
+      const c3Name = "子一、別學.mp3";
+      const c4Name = "丑一、遮止應學.mp3";
+      const c5Name = "丑二、修行應學mp3";
+
+      const basePath = "./assets/mp3/";
+      let selection = "上下層科判";
+      let src1 = basePath + selection + c1Name;
+      let src2 = basePath + selection + c2Name;
+      let src3 = basePath + selection + c3Name;
+      let src4 = basePath + selection + c4Name;
+      let src5 = basePath + selection + c5Name;
+
+      function changeAudioSelection() {
+        let e = document.getElementById("audio");
+        selection = e.value;
+        src1 = basePath + selection + "/" + c1Name;
+        src2 = basePath + selection + "/" + c2Name;
+        src3 = basePath + selection + "/" + c3Name;
+        src4 = basePath + selection + "/" + c4Name;
+        src5 = basePath + selection + "/" + c5Name;
+
+        let e1 = document.getElementById("c1");
+        let e2 = document.getElementById("c2");
+        let e3 = document.getElementById("c3");
+        let e4 = document.getElementById("c4");
+        let e5 = document.getElementById("c5");
+
+        e1.src = src1;
+        e2.src = src2;
+        e3.src = src3;
+        e4.src = src4;
+        e5.src = src5;
+
+        let a1 = document.getElementById("a1");
+        let a2 = document.getElementById("a2");
+        let a3 = document.getElementById("a3");
+        let a4 = document.getElementById("a4");
+        let a5 = document.getElementById("a5");
+
+        a1.load();
+        a2.load();
+        a3.load();
+        a4.load();
+        a5.load();
+      }
+    </script>
+  </head>
+
+  <body class="h-screen p-8">
+    <div class="flex row items-center">
+      <h1 class="min-w-64">癸二、教授中出，接下一頁</h1>
+      <audio controls class="m-2">
+        <source src="./assets/mp3/原文/癸二、教授中出.mp3" type="audio/mpeg" />
+      </audio>
+
+      <audio id="a1" controls class="m-2">
+        <source
+          id="c1"
+          src="./assets/mp3/上下層科判/癸二、教授中出.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
+    <div class="flex row items-center">
+      <h1 class="min-w-64">A1、正說</h1>
+      <audio controls class="m-2">
+        <source src="./assets/mp3/原文/A1、正說.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="a2" controls class="m-2">
+        <source
+          id="c2"
+          src="./assets/mp3/上下層科判/A1、正說.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
+    <div class="flex row items-center">
+      <h1 class="min-w-64">子一、別學，又分二：</h1>
+      <audio controls class="m-2">
+        <source src="./assets/mp3/原文/子一、別學.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="a3" controls class="m-2">
+        <source
+          id="c3"
+          src="./assets/mp3/上下層科判/子一、別學.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
+    <div class="flex row items-center">
+      <h1 class="min-w-64">丑一、遮止應學</h1>
+      <audio controls class="m-2">
+        <source src="./assets/mp3/原文/丑一、遮止應學.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="a4" controls class="m-2">
+        <source
+          id="c4"
+          src="./assets/mp3/上下層科判/丑一、遮止應學.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
+    <div class="flex row items-center">
+      <h1 class="min-w-64">丑二、修行應學</h1>
+      <audio controls class="m-2">
+        <source src="./assets/mp3/原文/丑二、修行應學.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="a5" controls class="m-2">
+        <source
+          id="c5"
+          src="./assets/mp3/上下層科判/丑二、修行應學.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
+    <div class="p-10">
+      <select
+        onchange="changeAudioSelection()"
+        class="min-w-64"
+        name="alphabet"
+        id="audio"
+      >
+        <option selected="selected" value="上下層科判">上下層科判</option>
+        <option value="四家合註語譯">四家合註語譯</option>
+        <option value="師父音檔">師父音檔</option>
+      </select>
+    </div>
+  </body>
+</html>
